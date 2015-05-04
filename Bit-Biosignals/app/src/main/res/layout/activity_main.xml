@@ -1,0 +1,243 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#93c01f"
+    android:id="@+id/layout_activity_main">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_bar">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/logo"
+            android:contentDescription="@string/app_name"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/app_name"
+            android:id="@+id/textView"
+            android:editable="false"
+            android:clickable="false"
+            android:textColor="#2d3800"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout_info">
+
+                <EditText
+                    android:id="@+id/editText_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="Patient ID"
+                    android:ems="10"
+                    android:layout_gravity="center" />
+
+                <EditText
+                    android:id="@+id/editText_forename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords|textPersonName"
+                    android:hint="Forname"
+                    android:ems="10"
+                    android:layout_gravity="center" />
+
+                <EditText
+                    android:id="@+id/editText_surname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords|textPersonName"
+                    android:hint="Surname"
+                    android:ems="10"
+                    android:layout_gravity="center" />
+
+                <EditText
+                    android:id="@+id/editText_dob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="date|number"
+                    android:hint="DOB dd:mm:yyyy"
+                    android:ems="10"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:id="@+id/layout_controls">
+
+                <EditText
+                    android:id="@+id/editText_deviceMAC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="Device MAC address"
+                    android:ems="10"
+                    android:layout_gravity="center"
+                    android:text="98:D3:31:B1:83:D0" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Connect"
+                        android:id="@+id/button_connect"
+                        android:onClick="connect"
+                        android:layout_gravity="center" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Disconnect"
+                        android:id="@+id/button_disconnect"
+                        android:onClick="disconnect"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Record ECG"
+                        android:id="@+id/checkBox_recordECG"
+                        android:layout_gravity="center"
+                        android:checked="false" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Record EMG"
+                        android:id="@+id/checkBox_reacordEMG"
+                        android:layout_gravity="center"
+                        android:checked="false" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Record EDA"
+                        android:id="@+id/checkBox_recordEDA"
+                        android:layout_gravity="center"
+                        android:checked="false" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <EditText
+                        android:id="@+id/editText_recordTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="Record time in seconds"
+                        android:ems="10"
+                        android:layout_gravity="center" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Start"
+                        android:id="@+id/button_start"
+                        android:onClick="start"
+                        android:layout_gravity="center" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Data Recorded"
+                        android:id="@+id/checkBox_dataRecorded"
+                        android:layout_gravity="center"
+                        android:checked="false"
+                        android:enabled="false" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Clear Data"
+                        android:id="@+id/button_clear"
+                        android:onClick="clear"
+                        android:layout_gravity="center" />
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save and Submit to server"
+                    android:id="@+id/button_save"
+                    android:layout_gravity="center"
+                    android:onClick="save" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout_log">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Logs..."
+                    android:id="@+id/textView_logs"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+
